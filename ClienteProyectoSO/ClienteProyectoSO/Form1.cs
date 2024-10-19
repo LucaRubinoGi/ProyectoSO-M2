@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ClienteProyectoSO
 {
@@ -16,10 +17,17 @@ namespace ClienteProyectoSO
     {
         Socket server;
         int connect = 0;
+        int login = 0;
         
         public Form1()
         {
             InitializeComponent();
+
+
+            // Inicialmente deshabilitamos el botón
+            LogIn.TextChanged += new EventHandler(LogIn_TextChanged);
+            Class.TextChanged += new EventHandler(Class_TextChanged);
+            Log.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -32,7 +40,7 @@ namespace ClienteProyectoSO
             //Creamos un IPEndPoint con el ip del servidor y puerto del servidor 
             //al que deseamos conectarnos
             IPAddress direc = IPAddress.Parse("192.168.56.101");
-            IPEndPoint ipep = new IPEndPoint(direc, 9005);
+            IPEndPoint ipep = new IPEndPoint(direc, 9030);
 
 
             //Creamos el socket 
@@ -84,27 +92,46 @@ namespace ClienteProyectoSO
         {
             if (connect == 1)
             {
-                if (Convert.ToInt32(Clase.Text) == 1 || Convert.ToInt32(Clase.Text) == 2 || Convert.ToInt32(Clase.Text) == 3)
+                try
                 {
-                    string mensaje = $"1/INSERT INTO players (name, class) VALUES ('{Nombre.Text}', {Clase.Text});";
-                    // Enviamos al servidor el nombre tecleado
-                    byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
-                    server.Send(msg);
+                    if (Convert.ToInt32(Clase.Text) == 1 || Convert.ToInt32(Clase.Text) == 2 || Convert.ToInt32(Clase.Text) == 3)
+                    {
+                        string mensaje = $"1/INSERT INTO players (name, class) VALUES ('{Nombre.Text}', {Clase.Text});";
+                        // Enviamos al servidor el nombre tecleado
+                        byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
+                        server.Send(msg);
 
-                    //Recibimos la respuesta del servidor
-                    byte[] msg2 = new byte[80];
-                    server.Receive(msg2);
-                    mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
-                    MessageBox.Show("Resultado: " + mensaje);
+                        //Recibimos la respuesta del servidor
+                        byte[] msg2 = new byte[80];
+                        server.Receive(msg2);
+                        mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
+                        MessageBox.Show("Resultado: " + mensaje);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Introduce un 1,2 o 3");
+                    }
                 }
-                else
+                catch 
                 {
-                    MessageBox.Show("Introduce la clase: 1, 2 o 3");
+                    MessageBox.Show("Introduce un 1,2 o 3");
                 }
             }
             else
             {
                 MessageBox.Show("No estas conectado al servidor");
+            }
+        }
+        private void TextBoxFilled()
+        {
+            // Si ambos TextBox tienen texto, habilitamos el botón, de lo contrario lo deshabilitamos
+            if (!string.IsNullOrWhiteSpace(LogIn.Text) && !string.IsNullOrWhiteSpace(Class.Text))
+            {
+                Log.Enabled = true; // Habilitamos el botón si ambos campos están rellenados
+            }
+            else
+            {
+                Log.Enabled = false; // Deshabilitamos el botón si alguno está vacío
             }
         }
 
@@ -189,6 +216,84 @@ namespace ClienteProyectoSO
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Log_Click(object sender, EventArgs e)
+        {
+            if (login == 0)
+            {
+                if (connect == 1)
+                {
+                    try
+                    {
+
+
+                        if (Convert.ToInt32(Class.Text) == 1 || Convert.ToInt32(Class.Text) == 2 || Convert.ToInt32(Class.Text) == 3)
+                        {
+                            string mensaje = $"5/{LogIn.Text}/{Class.Text}";
+
+                            // Enviamos al servidor el nombre tecleado
+                            byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
+                            server.Send(msg);
+                            login = 1;
+
+                            //Recibimos la respuesta del servidor
+                            byte[] msg2 = new byte[80];
+                            server.Receive(msg2);
+                            mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
+                            MessageBox.Show(mensaje);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Introduce un 1, 2 o 3");
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Introduce un 1,2 o 3");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No estas conectado al servidor");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ya has hecho Log In");
+            }
+        }
+
+        private void Conectados_Click(object sender, EventArgs e)
+        {
+            if (connect == 1)
+            {
+                string mensaje = "6/";
+                // Enviamos al servidor el nombre tecleado
+                byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
+                server.Send(msg);
+
+                //Recibimos la respuesta del servidor
+                byte[] msg2 = new byte[80];
+                server.Receive(msg2);
+                mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
+                MessageBox.Show(mensaje);
+
+            }
+            else
+            {
+                MessageBox.Show("No estas conectado al servidor");
+            }
+        }
+
+        private void Class_TextChanged(object sender, EventArgs e)
+        {
+            TextBoxFilled();
+        }
+
+        private void LogIn_TextChanged(object sender, EventArgs e)
+        {
+            TextBoxFilled();
         }
     }
 }

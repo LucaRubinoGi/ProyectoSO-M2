@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Log = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LogIn = new System.Windows.Forms.TextBox();
             this.Desconectar = new System.Windows.Forms.Button();
             this.Conectar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,15 +45,24 @@
             this.HP = new System.Windows.Forms.RadioButton();
             this.Duracion = new System.Windows.Forms.RadioButton();
             this.Ganadores = new System.Windows.Forms.RadioButton();
+            this.Conectados = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Class = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.Class);
+            this.groupBox1.Controls.Add(this.Log);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.LogIn);
             this.groupBox1.Controls.Add(this.Desconectar);
             this.groupBox1.Controls.Add(this.Conectar);
             this.groupBox1.Location = new System.Drawing.Point(468, 12);
@@ -60,9 +72,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LogIn";
             // 
+            // Log
+            // 
+            this.Log.Location = new System.Drawing.Point(184, 90);
+            this.Log.Name = "Log";
+            this.Log.Size = new System.Drawing.Size(125, 92);
+            this.Log.TabIndex = 4;
+            this.Log.Text = "Log In";
+            this.Log.UseVisualStyleBackColor = true;
+            this.Log.Click += new System.EventHandler(this.Log_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nombre ->";
+            // 
+            // LogIn
+            // 
+            this.LogIn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LogIn.ForeColor = System.Drawing.Color.Black;
+            this.LogIn.Location = new System.Drawing.Point(82, 25);
+            this.LogIn.Name = "LogIn";
+            this.LogIn.Size = new System.Drawing.Size(143, 22);
+            this.LogIn.TabIndex = 2;
+            this.LogIn.TextChanged += new System.EventHandler(this.LogIn_TextChanged);
+            // 
             // Desconectar
             // 
-            this.Desconectar.Location = new System.Drawing.Point(82, 111);
+            this.Desconectar.Location = new System.Drawing.Point(6, 139);
             this.Desconectar.Name = "Desconectar";
             this.Desconectar.Size = new System.Drawing.Size(172, 43);
             this.Desconectar.TabIndex = 1;
@@ -72,7 +113,7 @@
             // 
             // Conectar
             // 
-            this.Conectar.Location = new System.Drawing.Point(82, 46);
+            this.Conectar.Location = new System.Drawing.Point(6, 92);
             this.Conectar.Name = "Conectar";
             this.Conectar.Size = new System.Drawing.Size(172, 43);
             this.Conectar.TabIndex = 0;
@@ -148,16 +189,16 @@
             this.groupBox3.Controls.Add(this.HP);
             this.groupBox3.Controls.Add(this.Duracion);
             this.groupBox3.Controls.Add(this.Ganadores);
-            this.groupBox3.Location = new System.Drawing.Point(13, 221);
+            this.groupBox3.Location = new System.Drawing.Point(12, 221);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(774, 204);
+            this.groupBox3.Size = new System.Drawing.Size(439, 204);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Consultas";
             // 
             // Consultar
             // 
-            this.Consultar.Location = new System.Drawing.Point(130, 143);
+            this.Consultar.Location = new System.Drawing.Point(35, 132);
             this.Consultar.Name = "Consultar";
             this.Consultar.Size = new System.Drawing.Size(172, 43);
             this.Consultar.TabIndex = 5;
@@ -168,7 +209,7 @@
             // HP
             // 
             this.HP.AutoSize = true;
-            this.HP.Location = new System.Drawing.Point(130, 117);
+            this.HP.Location = new System.Drawing.Point(35, 92);
             this.HP.Name = "HP";
             this.HP.Size = new System.Drawing.Size(375, 20);
             this.HP.TabIndex = 2;
@@ -180,7 +221,7 @@
             // Duracion
             // 
             this.Duracion.AutoSize = true;
-            this.Duracion.Location = new System.Drawing.Point(130, 82);
+            this.Duracion.Location = new System.Drawing.Point(35, 66);
             this.Duracion.Name = "Duracion";
             this.Duracion.Size = new System.Drawing.Size(380, 20);
             this.Duracion.TabIndex = 1;
@@ -191,7 +232,7 @@
             // Ganadores
             // 
             this.Ganadores.AutoSize = true;
-            this.Ganadores.Location = new System.Drawing.Point(130, 42);
+            this.Ganadores.Location = new System.Drawing.Point(35, 40);
             this.Ganadores.Name = "Ganadores";
             this.Ganadores.Size = new System.Drawing.Size(338, 20);
             this.Ganadores.TabIndex = 0;
@@ -200,22 +241,67 @@
             this.Ganadores.UseVisualStyleBackColor = true;
             this.Ganadores.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
+            // Conectados
+            // 
+            this.Conectados.Location = new System.Drawing.Point(73, 117);
+            this.Conectados.Name = "Conectados";
+            this.Conectados.Size = new System.Drawing.Size(172, 43);
+            this.Conectados.TabIndex = 3;
+            this.Conectados.Text = "Conectados";
+            this.Conectados.UseVisualStyleBackColor = true;
+            this.Conectados.Click += new System.EventHandler(this.Conectados_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.Conectados);
+            this.groupBox4.Location = new System.Drawing.Point(468, 224);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(320, 201);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Jugadores Conectados";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(49, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(233, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Muéstrame los jugadores conectados";
+            // 
+            // Class
+            // 
+            this.Class.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Class.ForeColor = System.Drawing.Color.Black;
+            this.Class.Location = new System.Drawing.Point(82, 62);
+            this.Class.Name = "Class";
+            this.Class.Size = new System.Drawing.Size(143, 22);
+            this.Class.TabIndex = 5;
+            this.Class.TextChanged += new System.EventHandler(this.Class_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "675";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -236,6 +322,13 @@
         private System.Windows.Forms.RadioButton Duracion;
         private System.Windows.Forms.RadioButton Ganadores;
         private System.Windows.Forms.Button Consultar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox LogIn;
+        private System.Windows.Forms.Button Log;
+        private System.Windows.Forms.Button Conectados;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox Class;
     }
 }
 
