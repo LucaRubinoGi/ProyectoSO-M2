@@ -9,11 +9,14 @@
 #include <mysql.h>
 
 
+int sockets[100];
+int i=0;
 
 typedef struct 
 {
 	char nombre[200];
 	int clase;
+	int socket;
 } Conectado;
 
 typedef struct
@@ -22,7 +25,7 @@ typedef struct
    int num;
 } ListaConectados;
 
-int Pon(ListaConectados *lista, char nombre[20], int clase)
+int Pon(ListaConectados *lista, char nombre[20], int clase, int socket)
 {
 	if (lista->num == 100)
 	{
@@ -32,6 +35,9 @@ int Pon(ListaConectados *lista, char nombre[20], int clase)
 	{
 		strcpy(lista->conectados[lista->num].nombre,nombre);
 		lista->conectados[lista->num].clase = clase;
+		lista->conectados[lista->num].socket = socket;
+		printf("Aￃﾱadido cliente %s con clase %d en el socket %d, posiciￃﾳn %d en la lista\n", 
+			   nombre, clase, socket, lista->num);
 		lista->num++;
 		return 0;
 }
@@ -68,20 +74,25 @@ int Elimina(ListaConectados *lista, char nombre[20])
 	int pos = DamePosicion(lista, nombre);
 	if (pos == -1)
 	{
-	  return -1;	
+		return -1;  // No se encontrￃﾳ el cliente en la lista
 	}
 	else
 	{
-	 int i;
-	 for (i = pos; i < lista->num-1; i++)
-	 {
-		//lista->conectados[i] = lista->conectados[i+1];
-		strcpy(lista->conectados[i].nombre, lista->conectados[i+1].nombre);
-		lista->conectados[i].clase = lista->conectados[i+1].clase;
-	 }
+		printf("Eliminando cliente %s en la posiciￃﾳn %d\n", nombre, pos);
+		
+		for (int i = pos; i < lista->num - 1; i++)
+		{
+			strcpy(lista->conectados[i].nombre, lista->conectados[i + 1].nombre);
+			lista->conectados[i].clase = lista->conectados[i + 1].clase;
+			lista->conectados[i].socket = lista->conectados[i + 1].socket;
+			sockets[i] = sockets[i + 1];  // Sincroniza el array `sockets` si es necesario
+		}
+		
+		lista->num--;  // Reduce el nￃﾺmero de elementos en `miLista`
+		printf("Cliente eliminado. Total de conectados: %d\n", lista->num);
+		
+		return 0;  // Eliminaciￃﾳn exitosa
 	}
-	lista->num--;
-	return 0;
 }
 
 void DameConectados(ListaConectados *lista, char conectados[300])
@@ -94,9 +105,29 @@ void DameConectados(ListaConectados *lista, char conectados[300])
   }
 }
 
+
+
 ListaConectados miLista;
 ListaConectados miLista = { .num = 0 };
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+void EnviarListaConectadosATodos()
+{
+	char conectados[300];
+	sprintf(conectados, "7/");  // Empieza el mensaje con "7/" para que el cliente identifique este mensaje
+	
+	char lista[250];
+	DameConectados(&miLista, lista);  // Obtener la lista de conectados
+	strcat(conectados, lista);  // Concatenar la lista de conectados al mensaje
+	
+	printf("Mensaje de lista de conectados a enviar: %s\n", conectados); 
+	// Enviar a todos los clientes conectados
+	for (int i = 0; i < miLista.num; i++)
+	{
+		printf("Enviando lista actualizada al cliente en el socket %d\n", miLista.conectados[i].socket);
+		write(sockets[i], conectados, strlen(conectados));
+	}
+}
 
 void *AtenderCliente (void *socket)
 {
@@ -164,7 +195,16 @@ void *AtenderCliente (void *socket)
 		{
 			terminar = 1;
 			pthread_mutex_lock(&mutex);
-			Elimina(&miLista,nombre);
+			
+			int resultado = Elimina(&miLista, nombre);  // Guardamos el resultado de la eliminaciￃﾳn
+			if (resultado == 0) {
+				printf("Cliente %s eliminado correctamente en el socket %d\n", nombre,sock_conn);
+				// Notificar a los demￃﾡs clientes que este cliente se ha desconectado
+				EnviarListaConectadosATodos();
+			} else {
+				printf("Error: No se encontrￃﾳ el cliente %s en la lista de conectados\n", nombre);
+			}
+			
 			pthread_mutex_unlock(&mutex);
 		}
 		
@@ -178,7 +218,7 @@ void *AtenderCliente (void *socket)
 			}
 			else
 			{
-				sprintf (respuesta,"Se han introducido los datos correctamente");	
+				sprintf (respuesta,"1/Se han introducido los datos correctamente");	
 			}
 		}
 		if (codigo == 2)
@@ -200,6 +240,7 @@ void *AtenderCliente (void *socket)
 			}
 			else 
 			{
+				sprintf(resp,"2");
 				while(row != NULL)
 				{
 					sprintf(resp,"%s/%s",resp,row[0]);
@@ -230,6 +271,7 @@ void *AtenderCliente (void *socket)
 			}
 			else 
 			{
+				sprintf(resp,"3");
 				while(row != NULL)
 				{
 					sprintf(resp,"%s/%s",resp,row[0]);
@@ -258,60 +300,73 @@ void *AtenderCliente (void *socket)
 				printf("No se han obtenido datos de la consulta\n");	
 			}
 			else 
-			{
+			{   
+				sprintf(resp,"4/");
 				while(row != NULL)
 				{
-					sprintf(resp,"%s",row[0]);
+					sprintf(resp,"%s%s",resp,row[0]);
 					row = mysql_fetch_row (resultado); 
 				}
 			}
 			strcpy(respuesta,resp);
+			printf("%s",respuesta);
 			mysql_free_result(resultado);
 			
 		}
 		if (codigo == 5)
 		{
-		 pthread_mutex_lock(&mutex);
-		 p = strtok(NULL,"/");
-		 int clase = atoi(p);
-		 strcpy(nombre, consulta);
-		 int err = Pon(&miLista, consulta, clase);
-		 
-		 char query[200];
-		 sprintf(query,"INSERT INTO players (name, class) VALUES ('%s', %d);",consulta,clase);
-		 printf("%s\n",query);
-		 err = mysql_query(conn,query);
-		 if (err != 0)
-		 {
-			 printf ("Error al introducir datos la base %u %s\n", mysql_errno(conn), mysql_error(conn)); 
-			 exit(1);
-		 }
-		 else
-		 {
-			 sprintf (respuesta,"Se han introducido los datos correctamente");	
-		 }
-		 
-		 if (err == -1)
-		 {
-		   strcpy(respuesta,"No se ha podido conectar al servidor");
-		 }
-		 else
-		 {
-			 strcpy(respuesta,"Jugador conectado");
-		 }
-		 pthread_mutex_unlock(&mutex);
-		 
+			pthread_mutex_lock(&mutex);
+			
+			// Parseamos los datos de la peticiￃﾳn
+			p = strtok(NULL, "/");
+			int clase = atoi(p);
+			strcpy(nombre, consulta);
+			
+			// Aￃﾱadimos el nuevo cliente a la lista de conectados
+			int err = Pon(&miLista, consulta, clase, sock_conn);
+			char conectados[300];
+			DameConectados(&miLista,conectados);
+			if (err == -1)
+			{
+				sprintf(respuesta, "5/No se ha podido conectar al servidor");
+			}
+			else
+			{
+				sprintf(respuesta, "5/%s",conectados);
+				
+				// Notificar a todos los clientes conectados que se ha conectado un cliente
+				char notificacion[100];
+				sprintf(notificacion, "5/%s", conectados);
+				
+				for (int j = 0; j < miLista.num; j++)
+				{
+					if (miLista.conectados[j].socket != sock_conn) // Evita enviar la notificaciￃﾳn al propio cliente
+					{
+						printf("A￱adiendo lista cliente en el socket %d\n", miLista.conectados[i].socket);
+						write(miLista.conectados[j].socket, notificacion, strlen(notificacion));
+					}
+				}
+				
+				// Insertar en la base de datos
+				char query[200];
+				sprintf(query, "INSERT INTO players (name, class) VALUES ('%s', %d);", consulta, clase);
+				printf("%s\n", query);
+				
+				err = mysql_query(conn, query);
+				if (err != 0)
+				{
+					printf("Error al introducir datos en la base %u %s\n", mysql_errno(conn), mysql_error(conn));
+					exit(1);
+				}
+				else
+				{
+					printf("Se han introducido los datos correctamente en la base de datos\n");
+				}
+			}
+			
+			pthread_mutex_unlock(&mutex);
 		}
-		if (codigo == 6)
-		{
-		 printf("Hola");
-		 char conectados[300];
-		 pthread_mutex_lock(&mutex);
-		 DameConectados(&miLista, conectados);
-		 strcpy(respuesta, conectados);
-		 pthread_mutex_unlock(&mutex);
-		 
-		}
+		
 		if (codigo !=0)
 		{
 			
@@ -353,7 +408,7 @@ int main(int argc, char *argv[])
 	//htonl formatea el numero que recibe al formato necesario
 	serv_adr.sin_addr.s_addr = htonl(INADDR_ANY);
 	// establecemos el puerto de escucha
-	serv_adr.sin_port = htons(9030);
+	serv_adr.sin_port = htons(9020);
 	if (bind(sock_listen, (struct sockaddr *) &serv_adr, sizeof(serv_adr)) < 0)
 		printf ("Error al bind");
 	
@@ -363,9 +418,9 @@ int main(int argc, char *argv[])
 	
 	//Creamos una conexion al servidor MYSQL
 	
-	int sockets[100];
+	
 	pthread_t thread;
-	int i=0;
+	
 	// Bucle para atender a 5 clientes
 	for (;;)
 	{
@@ -380,6 +435,7 @@ int main(int argc, char *argv[])
 		// Crear thead y decirle lo que tiene que hacer
 		
 		pthread_create (&thread, NULL, AtenderCliente,&sockets[i]);
+		i++;
 	}
 		
 	

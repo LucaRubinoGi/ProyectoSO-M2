@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Threading;
 
 namespace ClienteProyectoSO
 {
@@ -18,12 +19,12 @@ namespace ClienteProyectoSO
         Socket server;
         int connect = 0;
         int login = 0;
+        Thread atender;
         
         public Form1()
         {
             InitializeComponent();
-
-
+            
             // Inicialmente deshabilitamos el botón
             LogIn.TextChanged += new EventHandler(LogIn_TextChanged);
             Class.TextChanged += new EventHandler(Class_TextChanged);
@@ -35,12 +36,89 @@ namespace ClienteProyectoSO
 
         }
 
+        public void PonLista()
+        {
+
+        }
+
+
+        private void AtenderServidor()
+        {
+            while (true)
+            {
+                byte[] msg2 = new byte[80];
+                server.Receive(msg2);
+                string[] trozos = Encoding.ASCII.GetString(msg2).Split('/');
+                int codigo = Convert.ToInt32(trozos[0]);
+                string mensaje;
+                switch (codigo)
+                {
+                    case 1:
+                        mensaje = trozos[1].Split('\0')[0];
+                        MessageBox.Show("Resultado: " + mensaje);
+                        break;
+                    case 2:
+                        StringBuilder nombresConcatenados = new StringBuilder();
+                        for (int i = 1; i < trozos.Length; i++)
+                        {
+                            if (!string.IsNullOrEmpty(trozos[i]))
+                            {
+                                nombresConcatenados.Append(trozos[i]);
+                                if (i < trozos.Length - 1)
+                                    nombresConcatenados.Append(", ");  // Separador entre nombres
+                            }
+                        }
+                        MessageBox.Show("Los nombres son: " + nombresConcatenados.ToString());
+                        break;
+                    case 3:
+                        mensaje = trozos[1].Split('\0')[0];
+                        MessageBox.Show("La duracion es: " + mensaje + " minutos");
+                        break;
+                    case 4:
+                        mensaje = trozos[1].Split('\0')[0];
+                        MessageBox.Show("El ganador de la partida tenia: " + mensaje + " puntos de vida.");
+                        break;
+                    case 5:
+                        listBoxConectados.Invoke((MethodInvoker)delegate
+                        {
+                            listBoxConectados.Items.Clear();
+                            for (int i = 2; i < trozos.Length; i++)  // empezamos en 1 para saltar el código
+                            {
+                                mensaje = trozos[i].Split('\0')[0];  // eliminamos el terminador de cadena si existe
+                                if (!string.IsNullOrEmpty(mensaje))  // asegurarse de que no esté vacío
+                                {
+                                    listBoxConectados.Items.Add(mensaje);  // Agregar cada nombre al ListBox
+                                }
+                            }
+                        });
+                        break;
+                    case 7: // Caso para la actualización de la lista de conectados al desconectar un cliente
+                        listBoxConectados.Invoke((MethodInvoker)delegate
+                        {
+                            listBoxConectados.Items.Clear();
+                            for (int i = 2; i < trozos.Length; i++)
+                            {
+                                mensaje = trozos[i].Split('\0')[0];
+                                if (!string.IsNullOrEmpty(mensaje))
+                                {
+                                    listBoxConectados.Items.Add(mensaje);
+                                }
+                            }
+                        });
+                        break;
+
+                }
+
+
+            }
+
+        }
         private void Conectar_Click(object sender, EventArgs e)
         {
             //Creamos un IPEndPoint con el ip del servidor y puerto del servidor 
             //al que deseamos conectarnos
-            IPAddress direc = IPAddress.Parse("192.168.56.101");
-            IPEndPoint ipep = new IPEndPoint(direc, 9030);
+            IPAddress direc = IPAddress.Parse("192.168.56.102");
+            IPEndPoint ipep = new IPEndPoint(direc, 9020);
 
 
             //Creamos el socket 
@@ -59,6 +137,11 @@ namespace ClienteProyectoSO
                 MessageBox.Show("No he podido conectar con el servidor");
                 return;
             }
+
+            ThreadStart ts = delegate { AtenderServidor(); };
+            atender = new Thread(ts);
+            atender.Start();
+
         }
 
         private void Desconectar_Click(object sender, EventArgs e)
@@ -71,6 +154,7 @@ namespace ClienteProyectoSO
                 server.Send(msg);
 
                 // Nos desconectamos
+                atender.Abort();
                 this.BackColor = Color.Gray;
                 server.Shutdown(SocketShutdown.Both);
                 server.Close();
@@ -102,10 +186,7 @@ namespace ClienteProyectoSO
                         server.Send(msg);
 
                         //Recibimos la respuesta del servidor
-                        byte[] msg2 = new byte[80];
-                        server.Receive(msg2);
-                        mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
-                        MessageBox.Show("Resultado: " + mensaje);
+                       
                     }
                     else
                     {
@@ -152,10 +233,7 @@ namespace ClienteProyectoSO
                     server.Send(msg);
 
                     //Recibimos la respuesta del servidor
-                    byte[] msg2 = new byte[80];
-                    server.Receive(msg2);
-                    mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
-                    MessageBox.Show("Los nombres son: " + mensaje);
+                    
 
                 }
                 else
@@ -175,11 +253,7 @@ namespace ClienteProyectoSO
                     server.Send(msg);
 
                     //Recibimos la respuesta del servidor
-                    byte[] msg2 = new byte[80];
-                    server.Receive(msg2);
-                    mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
-                    MessageBox.Show("La duracion es: " + mensaje + " minutos");
-
+                   
                 }
                 else
                 {
@@ -198,10 +272,7 @@ namespace ClienteProyectoSO
                     server.Send(msg);
 
                     //Recibimos la respuesta del servidor
-                    byte[] msg2 = new byte[80];
-                    server.Receive(msg2);
-                    mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
-                    MessageBox.Show("El ganador de la partida tenia: " + mensaje + " puntos de vida.");
+                   
 
                 }
                 else
@@ -238,10 +309,7 @@ namespace ClienteProyectoSO
                             login = 1;
 
                             //Recibimos la respuesta del servidor
-                            byte[] msg2 = new byte[80];
-                            server.Receive(msg2);
-                            mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
-                            MessageBox.Show(mensaje);
+                            
                         }
                         else
                         {
@@ -266,24 +334,7 @@ namespace ClienteProyectoSO
 
         private void Conectados_Click(object sender, EventArgs e)
         {
-            if (connect == 1)
-            {
-                string mensaje = "6/";
-                // Enviamos al servidor el nombre tecleado
-                byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
-                server.Send(msg);
-
-                //Recibimos la respuesta del servidor
-                byte[] msg2 = new byte[80];
-                server.Receive(msg2);
-                mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
-                MessageBox.Show(mensaje);
-
-            }
-            else
-            {
-                MessageBox.Show("No estas conectado al servidor");
-            }
+            
         }
 
         private void Class_TextChanged(object sender, EventArgs e)
@@ -294,6 +345,11 @@ namespace ClienteProyectoSO
         private void LogIn_TextChanged(object sender, EventArgs e)
         {
             TextBoxFilled();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

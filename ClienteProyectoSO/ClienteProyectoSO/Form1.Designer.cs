@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Class = new System.Windows.Forms.TextBox();
             this.Log = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.LogIn = new System.Windows.Forms.TextBox();
@@ -45,10 +46,8 @@
             this.HP = new System.Windows.Forms.RadioButton();
             this.Duracion = new System.Windows.Forms.RadioButton();
             this.Ganadores = new System.Windows.Forms.RadioButton();
-            this.Conectados = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Class = new System.Windows.Forms.TextBox();
+            this.listBoxConectados = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,6 +70,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LogIn";
+            // 
+            // Class
+            // 
+            this.Class.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Class.ForeColor = System.Drawing.Color.Black;
+            this.Class.Location = new System.Drawing.Point(82, 62);
+            this.Class.Name = "Class";
+            this.Class.Size = new System.Drawing.Size(143, 22);
+            this.Class.TabIndex = 5;
+            this.Class.TextChanged += new System.EventHandler(this.Class_TextChanged);
             // 
             // Log
             // 
@@ -241,21 +250,10 @@
             this.Ganadores.UseVisualStyleBackColor = true;
             this.Ganadores.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // Conectados
-            // 
-            this.Conectados.Location = new System.Drawing.Point(73, 117);
-            this.Conectados.Name = "Conectados";
-            this.Conectados.Size = new System.Drawing.Size(172, 43);
-            this.Conectados.TabIndex = 3;
-            this.Conectados.Text = "Conectados";
-            this.Conectados.UseVisualStyleBackColor = true;
-            this.Conectados.Click += new System.EventHandler(this.Conectados_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.Conectados);
+            this.groupBox4.Controls.Add(this.listBoxConectados);
             this.groupBox4.Location = new System.Drawing.Point(468, 224);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(320, 201);
@@ -263,24 +261,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Jugadores Conectados";
             // 
-            // label4
+            // listBoxConectados
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Muéstrame los jugadores conectados";
-            // 
-            // Class
-            // 
-            this.Class.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Class.ForeColor = System.Drawing.Color.Black;
-            this.Class.Location = new System.Drawing.Point(82, 62);
-            this.Class.Name = "Class";
-            this.Class.Size = new System.Drawing.Size(143, 22);
-            this.Class.TabIndex = 5;
-            this.Class.TextChanged += new System.EventHandler(this.Class_TextChanged);
+            this.listBoxConectados.FormattingEnabled = true;
+            this.listBoxConectados.ItemHeight = 16;
+            this.listBoxConectados.Location = new System.Drawing.Point(49, 67);
+            this.listBoxConectados.Name = "listBoxConectados";
+            this.listBoxConectados.Size = new System.Drawing.Size(229, 100);
+            this.listBoxConectados.TabIndex = 0;
             // 
             // Form1
             // 
@@ -301,7 +289,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -325,10 +312,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox LogIn;
         private System.Windows.Forms.Button Log;
-        private System.Windows.Forms.Button Conectados;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Class;
+        private System.Windows.Forms.ListBox listBoxConectados;
     }
 }
 
