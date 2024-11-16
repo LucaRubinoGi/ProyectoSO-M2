@@ -40,6 +40,19 @@ namespace ClienteProyectoSO
         {
 
         }
+        private static string LimpiarCaracteres(string input)
+        {
+            StringBuilder resultado = new StringBuilder();
+            foreach (char c in input)
+            {
+                // Solo incluimos caracteres imprimibles (códigos ASCII entre 32 y 126)
+                if (c >= 32 && c <= 126)
+                {
+                    resultado.Append(c);
+                }
+            }
+            return resultado.ToString().Trim();  // Quitamos cualquier espacio adicional al inicio o fin
+        }
 
 
         private void AtenderServidor()
@@ -106,7 +119,53 @@ namespace ClienteProyectoSO
                             }
                         });
                         break;
+                    case 10:  // Recibir invitación
+                        if (trozos.Length > 1)
+                        {
+                            
+                            string nombreInvitador = trozos[1];
 
+                           
+
+                            // Limpiar caracteres no imprimibles y espacios en blanco
+                            nombreInvitador = LimpiarCaracteres(nombreInvitador);
+
+                            string nombreInvitado = LogIn.Text;
+
+                            
+
+                            // Mostramos el mensaje de invitación y obtenemos la respuesta
+                            string textomb = $"Has sido invitado por {nombreInvitador}";
+                            DialogResult result = MessageBox.Show(textomb, "Invitación", MessageBoxButtons.YesNo);
+
+                            // Construimos la respuesta paso a paso
+                            string respuesta;
+                            if (result == DialogResult.Yes)
+                                respuesta = "11/" + nombreInvitador + "/" + LogIn.Text + "/aceptado";
+                            else
+                                respuesta = "11/" + nombreInvitador + "/" + LogIn.Text + "/rechazado";
+
+                          
+
+                            // Convertimos a bytes y enviamos al servidor
+                            byte[] respuestaMsg = Encoding.ASCII.GetBytes(respuesta);
+
+                            Console.WriteLine("Mensaje enviado al servidor: " + respuesta);
+
+                            server.Send(respuestaMsg);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error: el mensaje de invitación está incompleto.", "Error");
+                        }
+                        break;
+
+
+
+                    case 12:  // Resultado de la invitación
+                        string resultado = trozos[1];
+                        MessageBox.Show(resultado, "Resultado de la invitación");
+                        break;
                 }
 
 
@@ -117,8 +176,8 @@ namespace ClienteProyectoSO
         {
             //Creamos un IPEndPoint con el ip del servidor y puerto del servidor 
             //al que deseamos conectarnos
-            IPAddress direc = IPAddress.Parse("192.168.56.102");
-            IPEndPoint ipep = new IPEndPoint(direc, 9020);
+            IPAddress direc = IPAddress.Parse("10.4.119.5");
+            IPEndPoint ipep = new IPEndPoint(direc, 50005);
 
 
             //Creamos el socket 
@@ -350,6 +409,27 @@ namespace ClienteProyectoSO
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInvitar_Click(object sender, EventArgs e)
+        {
+            if (connect == 1 && login == 1)
+            {
+                if (LogIn.Text != InvitadoBox.Text)
+                {
+                    string mensaje = $"10/{LogIn.Text}/{InvitadoBox.Text}";
+                    byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
+                    server.Send(msg);
+                }
+                else
+                {
+                    MessageBox.Show("No te puedes invitar a ti mismo");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No has hecho Log In");
+            }
         }
     }
 }

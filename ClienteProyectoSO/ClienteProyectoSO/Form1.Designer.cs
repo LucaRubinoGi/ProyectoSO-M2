@@ -48,6 +48,9 @@
             this.Ganadores = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBoxConectados = new System.Windows.Forms.ListBox();
+            this.InvitadoBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnInvitar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -186,7 +189,7 @@
             // 
             this.Nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Nombre.ForeColor = System.Drawing.Color.Black;
-            this.Nombre.Location = new System.Drawing.Point(145, 47);
+            this.Nombre.Location = new System.Drawing.Point(145, 49);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(143, 22);
             this.Nombre.TabIndex = 0;
@@ -253,6 +256,9 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.groupBox4.Controls.Add(this.btnInvitar);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.InvitadoBox);
             this.groupBox4.Controls.Add(this.listBoxConectados);
             this.groupBox4.Location = new System.Drawing.Point(468, 224);
             this.groupBox4.Name = "groupBox4";
@@ -265,10 +271,38 @@
             // 
             this.listBoxConectados.FormattingEnabled = true;
             this.listBoxConectados.ItemHeight = 16;
-            this.listBoxConectados.Location = new System.Drawing.Point(49, 67);
+            this.listBoxConectados.Location = new System.Drawing.Point(6, 21);
             this.listBoxConectados.Name = "listBoxConectados";
             this.listBoxConectados.Size = new System.Drawing.Size(229, 100);
             this.listBoxConectados.TabIndex = 0;
+            // 
+            // InvitadoBox
+            // 
+            this.InvitadoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InvitadoBox.ForeColor = System.Drawing.Color.Black;
+            this.InvitadoBox.Location = new System.Drawing.Point(82, 129);
+            this.InvitadoBox.Name = "InvitadoBox";
+            this.InvitadoBox.Size = new System.Drawing.Size(153, 22);
+            this.InvitadoBox.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Nombre ->";
+            // 
+            // btnInvitar
+            // 
+            this.btnInvitar.Location = new System.Drawing.Point(6, 157);
+            this.btnInvitar.Name = "btnInvitar";
+            this.btnInvitar.Size = new System.Drawing.Size(229, 43);
+            this.btnInvitar.TabIndex = 6;
+            this.btnInvitar.Text = "Invitar";
+            this.btnInvitar.UseVisualStyleBackColor = true;
+            this.btnInvitar.Click += new System.EventHandler(this.btnInvitar_Click);
             // 
             // Form1
             // 
@@ -280,7 +314,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "675";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -289,6 +323,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -315,6 +350,9 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox Class;
         private System.Windows.Forms.ListBox listBoxConectados;
+        private System.Windows.Forms.Button btnInvitar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox InvitadoBox;
     }
 }
 

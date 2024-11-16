@@ -12,6 +12,7 @@
 int sockets[100];
 int i=0;
 
+
 typedef struct 
 {
 	char nombre[200];
@@ -41,6 +42,15 @@ int Pon(ListaConectados *lista, char nombre[20], int clase, int socket)
 		lista->num++;
 		return 0;
 }
+}
+
+int DameSocket(ListaConectados *lista, char nombre[20]) {
+	for (int i = 0; i < lista->num; i++) {
+		if (strcmp(lista->conectados[i].nombre, nombre) == 0) {
+			return lista->conectados[i].socket;
+		}
+	}
+	return -1; // No encontrado
 }
 	
 int DamePosicion(ListaConectados *lista, char nombre[20])
@@ -156,7 +166,7 @@ void *AtenderCliente (void *socket)
 		exit (1);
 	}
 	//inicializar la conexion
-	conn = mysql_real_connect (conn, "localhost","root", "mysql", "proyecto", 0, NULL, 0); 
+	conn = mysql_real_connect (conn, "shiva2.upc.es","root", "mysql", "M2_BBDDJuego", 0, NULL, 0); 
 	if (conn==NULL) {
 		printf ("Error al inicializar la conexi\uffc3\uffb3n: %u %s\n",
 				mysql_errno(conn), mysql_error(conn));
@@ -366,8 +376,86 @@ void *AtenderCliente (void *socket)
 			
 			pthread_mutex_unlock(&mutex);
 		}
+		if (codigo == 10) 
+		{
+			pthread_mutex_lock(&mutex);
+			
+			char nombreInvitador[20];
+			char nombreInvitado[20];
+			
+			// Obtenemos los nombres del invitador e invitado
+			strcpy(nombreInvitador, consulta);
+			strcpy(nombreInvitado, strtok(NULL, "/"));
+			
+			// Obtenemos los sockets de ambos usuarios
+			int socketInvitado = DameSocket(&miLista, nombreInvitado);
+			int socketInvitador = DameSocket(&miLista, nombreInvitador);
+			
+			if (socketInvitado != -1) 
+			{
+				char invitacion[100];
+				sprintf(invitacion, "10/%s", nombreInvitador);
+				printf("%s",invitacion);
+				write(socketInvitado, invitacion, strlen(invitacion));
+			} 
+			else 
+			{
+				char msg[100];
+				sprintf(msg, "12/El usuario %s no esta conectado.", nombreInvitado);
+				write(socketInvitador, msg, strlen(msg));
+			}
+			
+			pthread_mutex_unlock(&mutex);
+		}
 		
-		if (codigo !=0)
+		if (codigo == 11) 
+		{
+			pthread_mutex_lock(&mutex);
+			
+			char nombreInvitador[20];
+			char nombreInvitado[20];
+			char respuesta[20];
+			
+			// Recuperamos los datos directamente del mensaje recibido
+			strcpy(nombreInvitador, consulta);
+			strcpy(nombreInvitado, strtok(NULL, "/"));
+			strcpy(respuesta, strtok(NULL, "/"));  // "aceptado" o "rechazado"
+			
+			int socketInvitador = DameSocket(&miLista, nombreInvitador);
+			int socketInvitado = DameSocket(&miLista, nombreInvitado);
+			
+			if (socketInvitador != -1 && socketInvitado != -1) 
+			{
+				char msg[100];
+				if (strcmp(respuesta, "aceptado") == 0) 
+				{
+					sprintf(msg, "12/El usuario %s ha aceptado la invitacion.ﾡComienza la partida!", nombreInvitado);
+				} 
+				else 
+				{
+					sprintf(msg, "12/El usuario %s ha rechazado la invitacion. No se jugara la partida.", nombreInvitado);
+				}
+				
+				// Enviar mensaje al invitador
+				write(socketInvitador, msg, strlen(msg));
+				
+				// Enviar mensaje al invitado
+				write(socketInvitado, msg, strlen(msg));
+			} 
+			else 
+			{
+				// Si alguno no estￃﾡ conectado, notificamos al invitador que no se puede realizar la invitaciￃﾳn
+				char msg[100];
+				sprintf(msg, "12/El usuario %s no esta conectado. No se puede enviar la invitacion.", nombreInvitado);
+				write(socketInvitador, msg, strlen(msg));
+			}
+			
+			pthread_mutex_unlock(&mutex);
+		}
+		
+		
+		
+		if (codigo != 0 && codigo != 10 && codigo != 11)
 		{
 			
 			printf ("Respuesta: %s\n", respuesta);
@@ -405,10 +493,10 @@ int main(int argc, char *argv[])
 	serv_adr.sin_family = AF_INET;
 	
 	// asocia el socket a cualquiera de las IP de la m?quina. 
-	//htonl formatea el numero que recibe al formato necesario
+	//htonl formatea el numero que recibe al formato necesario-Wall -pedantic-errors -O0 -o programa programa.c -lmysqlclient -pthread
 	serv_adr.sin_addr.s_addr = htonl(INADDR_ANY);
 	// establecemos el puerto de escucha
-	serv_adr.sin_port = htons(9020);
+	serv_adr.sin_port = htons(50005);
 	if (bind(sock_listen, (struct sockaddr *) &serv_adr, sizeof(serv_adr)) < 0)
 		printf ("Error al bind");
 	
