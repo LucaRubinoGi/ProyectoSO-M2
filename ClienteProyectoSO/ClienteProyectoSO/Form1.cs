@@ -19,6 +19,7 @@ namespace ClienteProyectoSO
         Socket server;
         int connect = 0;
         int login = 0;
+        int partida = 0;
         Thread atender;
         
         public Form1()
@@ -163,9 +164,28 @@ namespace ClienteProyectoSO
 
 
                     case 12:  // Resultado de la invitación
-                        string resultado = trozos[1];
+                        if (Convert.ToInt32(trozos[1]) == 1)
+                        {
+                            partida = 1;
+                        }
+                        string resultado = trozos[2];
                         MessageBox.Show(resultado, "Resultado de la invitación");
                         break;
+
+                    case 20:  // Mensaje de chat
+                        if (trozos.Length > 2)
+                        {
+                            string remitente = trozos[1];  // Nombre del remitente
+                            string mensajeRecibido = trozos[2];  // Mensaje de chat
+
+                            // Añadir el mensaje al ListBox del chat
+                            ChatListBox.Invoke((MethodInvoker)delegate
+                            {
+                                ChatListBox.Items.Add($"{remitente}: {mensajeRecibido}");
+                            });
+                        }
+                        break;
+
                 }
 
 
@@ -430,6 +450,41 @@ namespace ClienteProyectoSO
             {
                 MessageBox.Show("No has hecho Log In");
             }
+        }
+
+        private void Nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Clase_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChatEnviar_Click(object sender, EventArgs e)
+        {
+            if (connect == 1 && login == 1 && partida == 1)
+            {
+                if (!string.IsNullOrWhiteSpace(ChatTextBox.Text))
+                {
+                    string mensaje = $"20/{LogIn.Text}/{ChatTextBox.Text}";  // Código 20 para chat
+                    byte[] msg = Encoding.ASCII.GetBytes(mensaje);
+                    server.Send(msg);
+
+                    // Limpiar el TextBox después de enviar el mensaje
+                    ChatTextBox.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("El mensaje no puede estar vacío.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debes estar conectado, haber iniciado sesión y estar en una partida para enviar mensajes.");
+            }
+
         }
     }
 }

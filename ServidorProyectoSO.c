@@ -26,6 +26,13 @@ typedef struct
    int num;
 } ListaConectados;
 
+typedef struct
+{
+	Conectado jugador1;
+	Conectado jugador2;
+	
+}Partida;
+
 int Pon(ListaConectados *lista, char nombre[20], int clase, int socket)
 {
 	if (lista->num == 100)
@@ -37,7 +44,7 @@ int Pon(ListaConectados *lista, char nombre[20], int clase, int socket)
 		strcpy(lista->conectados[lista->num].nombre,nombre);
 		lista->conectados[lista->num].clase = clase;
 		lista->conectados[lista->num].socket = socket;
-		printf("Aￃﾱadido cliente %s con clase %d en el socket %d, posiciￃﾳn %d en la lista\n", 
+		printf("AÃ±adido cliente %s con clase %d en el socket %d, posiciÃ³n %d en la lista\n", 
 			   nombre, clase, socket, lista->num);
 		lista->num++;
 		return 0;
@@ -78,17 +85,47 @@ int DamePosicion(ListaConectados *lista, char nombre[20])
 		 return -1;	
 		}
 	}
+int AnadirJugador1APartida(Partida *partida, ListaConectados *lista, char nombre[20]) 
+{
+		int pos = DamePosicion(lista, nombre);
+		if (pos == -1) {
+			// No se encontrÃ³ el jugador en la lista
+			return -1;
+		}
+		
+		// Copiar los datos al jugador 1
+		partida->jugador1 = lista->conectados[pos];
+		printf("Jugador %s aÃ±adido como Jugador 1 en la partida.\n", nombre);
+		
+		return 0; // 
+	}
+	
+int AnadirJugador2APartida(Partida *partida, ListaConectados *lista, char nombre[20]) 
+{
+		int pos = DamePosicion(lista, nombre);
+		if (pos == -1) {
+			// No se encontrÃ³ el jugador en la lista
+			return -1;
+		}
+		
+		// Copiar los datos al jugador 2
+		partida->jugador2 = lista->conectados[pos];
+		printf("Jugador %s aÃ±adido como Jugador 2 en la partida.\n", nombre);
+		
+		return 0; // Ãxito
+	}
+	
 	
 int Elimina(ListaConectados *lista, char nombre[20])
 {
 	int pos = DamePosicion(lista, nombre);
 	if (pos == -1)
 	{
-		return -1;  // No se encontrￃﾳ el cliente en la lista
+		return -1;  // No se encontrÃ³ el cliente en la lista
 	}
 	else
 	{
-		printf("Eliminando cliente %s en la posiciￃﾳn %d\n", nombre, pos);
+		printf("Eliminando cliente %s en la posiciÃ³n %d\n", nombre, pos);
 		
 		for (int i = pos; i < lista->num - 1; i++)
 		{
@@ -98,10 +135,10 @@ int Elimina(ListaConectados *lista, char nombre[20])
 			sockets[i] = sockets[i + 1];  // Sincroniza el array `sockets` si es necesario
 		}
 		
-		lista->num--;  // Reduce el nￃﾺmero de elementos en `miLista`
+		lista->num--;  // Reduce el nÃºmero de elementos en `miLista`
 		printf("Cliente eliminado. Total de conectados: %d\n", lista->num);
 		
-		return 0;  // Eliminaciￃﾳn exitosa
+		return 0;  // EliminaciÃ³n exitosa
 	}
 }
 
@@ -117,6 +154,7 @@ void DameConectados(ListaConectados *lista, char conectados[300])
 
 
 
+Partida partida;
 ListaConectados miLista;
 ListaConectados miLista = { .num = 0 };
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -206,13 +244,13 @@ void *AtenderCliente (void *socket)
 			terminar = 1;
 			pthread_mutex_lock(&mutex);
 			
-			int resultado = Elimina(&miLista, nombre);  // Guardamos el resultado de la eliminaciￃﾳn
+			int resultado = Elimina(&miLista, nombre);  // Guardamos el resultado de la eliminaciÃ³n
 			if (resultado == 0) {
 				printf("Cliente %s eliminado correctamente en el socket %d\n", nombre,sock_conn);
-				// Notificar a los demￃﾡs clientes que este cliente se ha desconectado
+				// Notificar a los demÃ¡s clientes que este cliente se ha desconectado
 				EnviarListaConectadosATodos();
 			} else {
-				printf("Error: No se encontrￃﾳ el cliente %s en la lista de conectados\n", nombre);
+				printf("Error: No se encontrÃ³ el cliente %s en la lista de conectados\n", nombre);
 			}
 			
 			pthread_mutex_unlock(&mutex);
@@ -327,12 +365,12 @@ void *AtenderCliente (void *socket)
 		{
 			pthread_mutex_lock(&mutex);
 			
-			// Parseamos los datos de la peticiￃﾳn
+			// Parseamos los datos de la peticiÃ³n
 			p = strtok(NULL, "/");
 			int clase = atoi(p);
 			strcpy(nombre, consulta);
 			
-			// Aￃﾱadimos el nuevo cliente a la lista de conectados
+			// AÃ±adimos el nuevo cliente a la lista de conectados
 			int err = Pon(&miLista, consulta, clase, sock_conn);
 			char conectados[300];
 			DameConectados(&miLista,conectados);
@@ -350,9 +388,9 @@ void *AtenderCliente (void *socket)
 				
 				for (int j = 0; j < miLista.num; j++)
 				{
-					if (miLista.conectados[j].socket != sock_conn) // Evita enviar la notificaciￃﾳn al propio cliente
+					if (miLista.conectados[j].socket != sock_conn) // Evita enviar la notificaciÃ³n al propio cliente
 					{
-						printf("A￱adiendo lista cliente en el socket %d\n", miLista.conectados[i].socket);
+						printf("Añadiendo lista cliente en el socket %d\n", miLista.conectados[i].socket);
 						write(miLista.conectados[j].socket, notificacion, strlen(notificacion));
 					}
 				}
@@ -391,6 +429,11 @@ void *AtenderCliente (void *socket)
 			int socketInvitado = DameSocket(&miLista, nombreInvitado);
 			int socketInvitador = DameSocket(&miLista, nombreInvitador);
 			
+			// AÃ±adir el jugador que invita como Jugador 1
+			if (AnadirJugador1APartida(&partida, &miLista, nombreInvitador) == -1) {
+				printf("Error: No se pudo aÃ±adir al jugador %s como jugador 1.\n", nombreInvitador);
+			}
+			
 			if (socketInvitado != -1) 
 			{
 				char invitacion[100];
@@ -421,6 +464,16 @@ void *AtenderCliente (void *socket)
 			strcpy(nombreInvitado, strtok(NULL, "/"));
 			strcpy(respuesta, strtok(NULL, "/"));  // "aceptado" o "rechazado"
 			
+			if (strcmp(respuesta, "aceptado") == 0) {
+				// AÃ±adir el jugador invitado como Jugador 2
+				if (AnadirJugador2APartida(&partida, &miLista, nombreInvitado) == -1) {
+					printf("Error: No se pudo aÃ±adir al jugador %s como jugador 2.\n", nombreInvitado);
+				} else {
+					printf("Partida iniciada entre %s (Jugador 1) y %s (Jugador 2).\n",
+						   partida.jugador1.nombre, partida.jugador2.nombre);
+				}
+			}
+			
 			int socketInvitador = DameSocket(&miLista, nombreInvitador);
 			int socketInvitado = DameSocket(&miLista, nombreInvitado);
 			
@@ -429,7 +482,7 @@ void *AtenderCliente (void *socket)
 				char msg[100];
 				if (strcmp(respuesta, "aceptado") == 0) 
 				{
-					sprintf(msg, "12/El usuario %s ha aceptado la invitacion.ﾡComienza la partida!", nombreInvitado);
+					sprintf(msg, "12/El usuario %s ha aceptado la invitacion.¡Comienza la partida!", nombreInvitado);
 				} 
 				else 
 				{
@@ -444,10 +497,33 @@ void *AtenderCliente (void *socket)
 			} 
 			else 
 			{
-				// Si alguno no estￃﾡ conectado, notificamos al invitador que no se puede realizar la invitaciￃﾳn
+				// Si alguno no estÃ¡ conectado, notificamos al invitador que no se puede realizar la invitaciÃ³n
 				char msg[100];
 				sprintf(msg, "12/El usuario %s no esta conectado. No se puede enviar la invitacion.", nombreInvitado);
 				write(socketInvitador, msg, strlen(msg));
+			}
+			
+			pthread_mutex_unlock(&mutex);
+		}
+		if (codigo == 20) {
+			pthread_mutex_lock(&mutex);
+			
+			// Parsear los datos del mensaje
+			char nombreRemitente[20];
+			char mensaje[256];
+			strcpy(nombreRemitente, consulta); // Nombre del jugador que envÃ­a el mensaje
+			strcpy(mensaje, strtok(NULL, "/")); // Mensaje enviado
+			
+			// Crear el mensaje para enviar
+			char mensajeParaEnviar[300];
+			sprintf(mensajeParaEnviar, "20/%s/%s", nombreRemitente, mensaje);
+			
+			// Enviar el mensaje a ambos jugadores de la partida
+			if (write(partida.jugador1.socket, mensajeParaEnviar, strlen(mensajeParaEnviar)) == -1) {
+				perror("Error al enviar mensaje al Jugador 1");
+			}
+			if (write(partida.jugador2.socket, mensajeParaEnviar, strlen(mensajeParaEnviar)) == -1) {
+				perror("Error al enviar mensaje al Jugador 2");
 			}
 			
 			pthread_mutex_unlock(&mutex);
