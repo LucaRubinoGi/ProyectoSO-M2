@@ -1,0 +1,50 @@
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesLib\bin\Debug\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesLib\bin\Debug\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.AssemblyReference.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.CoreCompileInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesLib\bin\Debug\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesLib\bin\Debug\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.AssemblyReference.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.CoreCompileInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\bin\Debug\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\bin\Debug\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.AssemblyReference.cache
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.CoreCompileInputs.cache
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\bin\Debug\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\bin\Debug\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.AssemblyReference.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.Properties.Resources.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.GenerateResource.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.csproj.CoreCompileInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesLib\obj\Debug\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesLib\bin\Debug\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesLib\bin\Debug\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesLib\obj\Debug\TanquesLib.csproj.AssemblyReference.cache
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesLib\obj\Debug\TanquesLib.Properties.Resources.resources
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesLib\obj\Debug\TanquesLib.csproj.GenerateResource.cache
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesLib\obj\Debug\TanquesLib.csproj.CoreCompileInputs.cache
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesLib\obj\Debug\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesLib\obj\Debug\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesLib\bin\Debug\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesLib\bin\Debug\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesLib\obj\Debug\TanquesLib.csproj.AssemblyReference.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesLib\obj\Debug\TanquesLib.Properties.Resources.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesLib\obj\Debug\TanquesLib.csproj.GenerateResource.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesLib\obj\Debug\TanquesLib.csproj.CoreCompileInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesLib\obj\Debug\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesLib\obj\Debug\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesLib\bin\Debug\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesLib\bin\Debug\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesLib\obj\Debug\TanquesLib.csproj.AssemblyReference.cache
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesLib\obj\Debug\TanquesLib.Properties.Resources.resources
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesLib\obj\Debug\TanquesLib.csproj.GenerateResource.cache
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesLib\obj\Debug\TanquesLib.csproj.CoreCompileInputs.cache
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesLib\obj\Debug\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesLib\obj\Debug\TanquesLib.pdb

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TanquesForms/1.0.0": {
+        "dependencies": {
+          "TanquesLib": "1.0.0"
+        },
+        "runtime": {
+          "TanquesForms.dll": {}
+        }
+      },
+      "TanquesLib/1.0.0": {
+        "runtime": {
+          "TanquesLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TanquesForms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TanquesLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

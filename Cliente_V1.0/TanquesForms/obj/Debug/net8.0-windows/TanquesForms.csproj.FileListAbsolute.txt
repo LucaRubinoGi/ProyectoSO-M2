@@ -1,0 +1,154 @@
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.exe
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.deps.json
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.runtimeconfig.json
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form1.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Properties.Resources.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.GenerateResource.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfoInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfo.cs
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.CoreCompileInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\refint\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.genruntimeconfig.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\ref\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.AssemblyReference.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesF.A8252421.Up2Date
+C:\Users\quimb\OneDrive\Escritorio\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form2.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.exe
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.deps.json
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.runtimeconfig.json
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.AssemblyReference.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form1.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form2.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Properties.Resources.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.GenerateResource.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfoInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfo.cs
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.CoreCompileInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesF.A8252421.Up2Date
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\refint\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.genruntimeconfig.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.6\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\ref\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.exe
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.deps.json
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.runtimeconfig.json
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.AssemblyReference.cache
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form1.resources
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form2.resources
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Properties.Resources.resources
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.GenerateResource.cache
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfoInputs.cache
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfo.cs
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.CoreCompileInputs.cache
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesF.A8252421.Up2Date
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\refint\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.genruntimeconfig.cache
+C:\Users\Luca\Desktop\Tanques_V0.7\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\ref\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.exe
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.deps.json
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.runtimeconfig.json
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.AssemblyReference.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form1.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form2.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Properties.Resources.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.GenerateResource.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfoInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfo.cs
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.CoreCompileInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesF.A8252421.Up2Date
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\refint\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.genruntimeconfig.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.8\Tanques_V0.7\Tanques\TanquesForms\TanquesForms\obj\Debug\net8.0-windows\ref\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.exe
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.deps.json
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.runtimeconfig.json
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.AssemblyReference.cache
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form1.resources
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form2.resources
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Properties.Resources.resources
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.GenerateResource.cache
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfoInputs.cache
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfo.cs
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.CoreCompileInputs.cache
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesF.A8252421.Up2Date
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\refint\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.genruntimeconfig.cache
+C:\Users\Luca\Desktop\Tanques_V0.9 (1)\Tanques_V0.9\Cliente_V0.9\TanquesForms\obj\Debug\net8.0-windows\ref\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.exe
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.deps.json
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.runtimeconfig.json
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.AssemblyReference.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form1.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form2.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Properties.Resources.resources
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.GenerateResource.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfoInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfo.cs
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.CoreCompileInputs.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesF.A8252421.Up2Date
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\refint\TanquesForms.dll
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.genruntimeconfig.cache
+C:\Users\quimb\OneDrive\Escritorio\Tanques_V0.10\Cliente_V0.10\TanquesForms\obj\Debug\net8.0-windows\ref\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.exe
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.deps.json
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.runtimeconfig.json
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\bin\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.dll
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\bin\Debug\net8.0-windows\TanquesLib.pdb
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.AssemblyReference.cache
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form1.resources
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Form2.resources
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.Properties.Resources.resources
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.GenerateResource.cache
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfoInputs.cache
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.AssemblyInfo.cs
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.csproj.CoreCompileInputs.cache
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesF.A8252421.Up2Date
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\refint\TanquesForms.dll
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.pdb
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\TanquesForms.genruntimeconfig.cache
+C:\Users\Luca\Desktop\Tanques_V1.0\Tanques_V1.0\Cliente_V1.0\TanquesForms\obj\Debug\net8.0-windows\ref\TanquesForms.dll

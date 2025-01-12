@@ -1,0 +1,94 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesForms\\TanquesForms.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesForms\\TanquesForms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesForms\\TanquesForms.csproj",
+        "projectName": "TanquesForms",
+        "projectPath": "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesForms\\TanquesForms.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesForms\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesLib\\TanquesLib.csproj": {
+                "projectPath": "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesLib\\TanquesLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesLib\\TanquesLib.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesLib\\TanquesLib.csproj",
+        "projectName": "TanquesLib",
+        "projectPath": "C:\\Users\\Luca\\Desktop\\Tanques_V1.0\\Tanques_V1.0\\Cliente_V1.0\\TanquesLib\\TanquesLib.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}
